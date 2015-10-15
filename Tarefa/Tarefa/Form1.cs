@@ -2,11 +2,13 @@
 using System.IO;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace Tarefa
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, int> valores = new Dictionary<string, int>();
+       
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +27,73 @@ namespace Tarefa
                     MessageBox.Show("Non existe o arquivo a ler","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             };
+
+            //o igual que en java as lambdas infiren os tipos dos argumentos segundo o contexto
+            this.mnuGraba.Click += (sender,  e) => {
+                using (StreamWriter strW = new StreamWriter("../../recursos/Escrutinio.txt")) {
+                    if (lstVotados.Items.Count!=0)
+                    {
+                        foreach (var val in lstVotados.Items)
+                        {
+                            int indice = lstVotados.FindStringExact(val.ToString());
+                            strW.WriteLine(string.Format("{0},{1}", lstVotados.Items[indice], lstVotos.Items[indice]));
+                        }
+                        MessageBox.Show("Datos gardados con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("Non hai datos\nqueres gardar igual?", "informacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK) {
+                            strW.WriteLine();
+                        }
+                        
+                    }
+                }
+            };
+            this.mnuSalir.Click += (sender, e) => {
+                this.Close();
+            };
+            this.mnuOrdena.Click += (sender, e) => {
+                
+                SortedList<int,string> valores = new SortedList<int, string>();
+                
+                foreach (var val in lstVotados.Items)
+                {
+                    int indice = lstVotados.FindStringExact(val.ToString());
+                    valores.Add(int.Parse(lstVotos.Items[indice].ToString()), lstVotados.Items[indice].ToString());
+                }
+                lstVotados.Items.Clear();
+                lstVotos.Items.Clear();
+                foreach (var v in valores.OrderBy(x=>-x.Key))
+                {
+                    lstVotados.Items.Add(v.Value);
+                    lstVotos.Items.Add(v.Key);
+                }
+                txtNomeDelegado.Text = lstVotados.Items[0].ToString();
+                txtVotosDelegado.Text = lstVotados.Items[0].ToString();
+                txtNomeSubdele.Text = lstVotados.Items[1].ToString();
+                txtVotosSubdele.Text = lstVotados.Items[1].ToString();
+            };
+            this.btnOrdena.Click += (sender, e) => {
+
+                SortedList<int, string> valores = new SortedList<int, string>();
+
+                foreach (var val in lstVotados.Items)
+                {
+                    int indice = lstVotados.FindStringExact(val.ToString());
+                    valores.Add(int.Parse(lstVotos.Items[indice].ToString()), lstVotados.Items[indice].ToString());
+                }
+                lstVotados.Items.Clear();
+                lstVotos.Items.Clear();
+                foreach (var v in valores.OrderBy(x => -x.Key))
+                {
+                    lstVotados.Items.Add(v.Value);
+                    lstVotos.Items.Add(v.Key);
+                }
+                txtNomeDelegado.Text = lstVotados.Items[0].ToString();
+                txtVotosDelegado.Text = lstVotos.Items[0].ToString();
+                txtNomeSubdele.Text = lstVotados.Items[1].ToString();
+                txtVotosSubdele.Text = lstVotos.Items[1].ToString();
+            };
             this.btnMais.Click += (object sender, EventArgs e) => {
                 if (lstAlumnos.Items.Count != 0)
                 {
@@ -32,9 +101,9 @@ namespace Tarefa
                     {
                         if (lstVotados.FindStringExact(lstAlumnos.SelectedItem.ToString()) == ListBox.NoMatches)
                         {
-                            valores.Add(lstAlumnos.SelectedItem.ToString(),1);
+                            
                             lstVotados.Items.Add(lstAlumnos.SelectedItem);
-                            lstVotos.Items.Add(valores[lstAlumnos.SelectedItem.ToString()]);
+                            lstVotos.Items.Add(1);
                         }
                         else
                         {
@@ -44,6 +113,26 @@ namespace Tarefa
                     else MessageBox.Show("Seleciona un", "Seleciona", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else MessageBox.Show("Non hai alumnos\ncarga os datos","Carga",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            };
+
+            this.btnMenos.Click += (object sender, EventArgs e) => {
+                if (lstVotados.Items.Count != 0)
+                {
+                    if (lstVotados.SelectedItem != null)
+                    {
+                        
+                        lstVotos.Items[lstVotados.SelectedIndex] = int.Parse(lstVotos.Items[lstVotados.SelectedIndex].ToString()) -1;
+                        if (lstVotos.Items[lstVotados.SelectedIndex].ToString().Equals("0"))
+                        {
+                            lstVotos.Items.RemoveAt(lstVotados.SelectedIndex);
+                            lstVotados.Items.RemoveAt(lstVotados.SelectedIndex);
+                            
+                        }
+                        
+                    }
+                    else MessageBox.Show("Seleciona un", "Seleciona", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else MessageBox.Show("Non hai alumnos\ncarga os datos", "Carga", MessageBoxButtons.OK, MessageBoxIcon.Information);
             };
 
 
