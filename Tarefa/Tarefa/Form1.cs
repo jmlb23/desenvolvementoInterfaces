@@ -14,6 +14,7 @@ namespace Tarefa
             InitializeComponent();
             this.mnuCarga.Click += (object sender, EventArgs e) => {
                 //para que cerre o recurso
+                lstAlumnos.Items.Clear();
                 try
                 {
                     using (StreamReader stLee = new StreamReader("../../recursos/Alumnos.txt"))
@@ -82,12 +83,14 @@ namespace Tarefa
             this.btnOrdena.Click += (sender, e) => {
                 if (lstVotados.Items.Count != 0)
                 {
+                    //a key é o nome xa que non habera duplicados
                     SortedList<string, int> valores = new SortedList<string, int>();
 
                     foreach (var val in lstVotados.Items)
                     {
                         int indice = lstVotados.FindStringExact(val.ToString());
                         valores.Add(lstVotados.Items[indice].ToString(), int.Parse(lstVotos.Items[indice].ToString()));
+                        
                     }
                     lstVotados.Items.Clear();
                     lstVotos.Items.Clear();
