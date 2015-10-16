@@ -36,7 +36,7 @@ namespace Tarefa
                         foreach (var val in lstVotados.Items)
                         {
                             int indice = lstVotados.FindStringExact(val.ToString());
-                            strW.WriteLine(string.Format("{0},{1}", lstVotados.Items[indice], lstVotos.Items[indice]));
+                            strW.WriteLine(string.Format("{0}|{1}", lstVotados.Items[indice], lstVotos.Items[indice]));
                         }
                         MessageBox.Show("Datos gardados con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -53,46 +53,58 @@ namespace Tarefa
                 this.Close();
             };
             this.mnuOrdena.Click += (sender, e) => {
-                
-                SortedList<int,string> valores = new SortedList<int, string>();
-                
-                foreach (var val in lstVotados.Items)
+                if (lstVotados.Items.Count != 0)
                 {
-                    int indice = lstVotados.FindStringExact(val.ToString());
-                    valores.Add(int.Parse(lstVotos.Items[indice].ToString()), lstVotados.Items[indice].ToString());
+                    SortedList<string, int> valores = new SortedList<string, int>();
+
+                    foreach (var val in lstVotados.Items)
+                    {
+                        int indice = lstVotados.FindStringExact(val.ToString());
+                        valores.Add(lstVotados.Items[indice].ToString(), int.Parse(lstVotos.Items[indice].ToString()));
+                    }
+                    lstVotados.Items.Clear();
+                    lstVotos.Items.Clear();
+                    foreach (var v in valores.OrderBy(x => -x.Value))
+                    {
+                        lstVotados.Items.Add(v.Key);
+                        lstVotos.Items.Add(v.Value);
+                    }
+                    txtNomeDelegado.Text = lstVotados.Items[0].ToString();
+                    txtVotosDelegado.Text = lstVotos.Items[0].ToString();
+                    txtNomeSubdele.Text = lstVotados.Items[1].ToString();
+                    txtVotosSubdele.Text = lstVotos.Items[1].ToString();
                 }
-                lstVotados.Items.Clear();
-                lstVotos.Items.Clear();
-                foreach (var v in valores.OrderBy(x=>-x.Key))
+                else 
                 {
-                    lstVotados.Items.Add(v.Value);
-                    lstVotos.Items.Add(v.Key);
+                    MessageBox.Show("Non hai datos para ordenar","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);                
                 }
-                txtNomeDelegado.Text = lstVotados.Items[0].ToString();
-                txtVotosDelegado.Text = lstVotados.Items[0].ToString();
-                txtNomeSubdele.Text = lstVotados.Items[1].ToString();
-                txtVotosSubdele.Text = lstVotados.Items[1].ToString();
             };
             this.btnOrdena.Click += (sender, e) => {
-
-                SortedList<int, string> valores = new SortedList<int, string>();
-
-                foreach (var val in lstVotados.Items)
+                if (lstVotados.Items.Count != 0)
                 {
-                    int indice = lstVotados.FindStringExact(val.ToString());
-                    valores.Add(int.Parse(lstVotos.Items[indice].ToString()), lstVotados.Items[indice].ToString());
+                    SortedList<string, int> valores = new SortedList<string, int>();
+
+                    foreach (var val in lstVotados.Items)
+                    {
+                        int indice = lstVotados.FindStringExact(val.ToString());
+                        valores.Add(lstVotados.Items[indice].ToString(), int.Parse(lstVotos.Items[indice].ToString()));
+                    }
+                    lstVotados.Items.Clear();
+                    lstVotos.Items.Clear();
+                    foreach (var v in valores.OrderBy(x => -x.Value))
+                    {
+                        lstVotados.Items.Add(v.Key);
+                        lstVotos.Items.Add(v.Value);
+                    }
+                    txtNomeDelegado.Text = lstVotados.Items[0].ToString();
+                    txtVotosDelegado.Text = lstVotos.Items[0].ToString();
+                    txtNomeSubdele.Text = lstVotados.Items[1].ToString();
+                    txtVotosSubdele.Text = lstVotos.Items[1].ToString();
                 }
-                lstVotados.Items.Clear();
-                lstVotos.Items.Clear();
-                foreach (var v in valores.OrderBy(x => -x.Key))
+                else
                 {
-                    lstVotados.Items.Add(v.Value);
-                    lstVotos.Items.Add(v.Key);
+                    MessageBox.Show("Non hai datos para ordenar", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                txtNomeDelegado.Text = lstVotados.Items[0].ToString();
-                txtVotosDelegado.Text = lstVotos.Items[0].ToString();
-                txtNomeSubdele.Text = lstVotados.Items[1].ToString();
-                txtVotosSubdele.Text = lstVotos.Items[1].ToString();
             };
             this.btnMais.Click += (object sender, EventArgs e) => {
                 if (lstAlumnos.Items.Count != 0)
