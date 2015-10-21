@@ -1,0 +1,9 @@
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe.config
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.XML
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.pdb
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\bin\Debug\FSharp.Core.dll
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\bin\Debug\FSharp.Core.xml
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\bin\Debug\es\FSharp.Core.resources.dll
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.exe
+F:\proyectos\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.pdb

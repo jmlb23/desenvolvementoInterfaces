@@ -1,0 +1,9 @@
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\bin\Debug\Areas.exe.config
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\bin\Debug\Areas.exe
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\bin\Debug\Areas.pdb
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\obj\Debug\Areas.Form1.resources
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\obj\Debug\Areas.Properties.Resources.resources
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\obj\Debug\Areas.csproj.GenerateResource.Cache
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\obj\Debug\Areas.exe
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\obj\Debug\Areas.pdb
+c:\users\jesus\documents\visual studio 2015\Projects\Areas\Areas\obj\Debug\Areas.csprojResolveAssemblyReference.cache

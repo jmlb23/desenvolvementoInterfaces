@@ -1,0 +1,9 @@
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\bin\Debug\ConsoleApplication2.xml
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.Resources.resources
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.vbproj.GenerateResource.Cache
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.xml
+F:\proyectos\ConsoleApplication2\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb

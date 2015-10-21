@@ -1,0 +1,9 @@
+F:\proyectos\ListaMultiple\ListaMultiple\bin\Debug\ListaMultiple.exe.config
+F:\proyectos\ListaMultiple\ListaMultiple\bin\Debug\ListaMultiple.exe
+F:\proyectos\ListaMultiple\ListaMultiple\bin\Debug\ListaMultiple.pdb
+F:\proyectos\ListaMultiple\ListaMultiple\obj\Debug\ListaMultiple.csprojResolveAssemblyReference.cache
+F:\proyectos\ListaMultiple\ListaMultiple\obj\Debug\ListaMultiple.Form1.resources
+F:\proyectos\ListaMultiple\ListaMultiple\obj\Debug\ListaMultiple.Properties.Resources.resources
+F:\proyectos\ListaMultiple\ListaMultiple\obj\Debug\ListaMultiple.csproj.GenerateResource.Cache
+F:\proyectos\ListaMultiple\ListaMultiple\obj\Debug\ListaMultiple.exe
+F:\proyectos\ListaMultiple\ListaMultiple\obj\Debug\ListaMultiple.pdb
