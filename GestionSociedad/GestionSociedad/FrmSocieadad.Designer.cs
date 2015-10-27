@@ -36,15 +36,25 @@
             this.cmbSocio = new System.Windows.Forms.ComboBox();
             this.lstBeneficiarios = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblNsocio = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblNif = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblNsocio = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.sociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNovo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBorra = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuModifica = new System.Windows.Forms.ToolStripMenuItem();
+            this.beneficiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNovoBen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBorrarBen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -122,15 +132,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta de beneficiarios por socio";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Selecione Socio/a";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -139,6 +140,15 @@
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Beneficiarios/as";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Selecione Socio/a";
             // 
             // groupBox2
             // 
@@ -152,23 +162,6 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Socio";
-            // 
-            // lblNsocio
-            // 
-            this.lblNsocio.AutoSize = true;
-            this.lblNsocio.Location = new System.Drawing.Point(165, 16);
-            this.lblNsocio.Name = "lblNsocio";
-            this.lblNsocio.Size = new System.Drawing.Size(0, 13);
-            this.lblNsocio.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Numero socio:";
             // 
             // label5
             // 
@@ -187,6 +180,90 @@
             this.lblNif.Size = new System.Drawing.Size(0, 13);
             this.lblNif.TabIndex = 2;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Numero socio:";
+            // 
+            // lblNsocio
+            // 
+            this.lblNsocio.AutoSize = true;
+            this.lblNsocio.Location = new System.Drawing.Point(165, 16);
+            this.lblNsocio.Name = "lblNsocio";
+            this.lblNsocio.Size = new System.Drawing.Size(0, 13);
+            this.lblNsocio.TabIndex = 0;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sociosToolStripMenuItem,
+            this.beneficiarioToolStripMenuItem,
+            this.mnuSalir});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(958, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // sociosToolStripMenuItem
+            // 
+            this.sociosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuNovo,
+            this.mnuBorra,
+            this.mnuModifica});
+            this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
+            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.sociosToolStripMenuItem.Text = "Socios";
+            // 
+            // mnuNovo
+            // 
+            this.mnuNovo.Name = "mnuNovo";
+            this.mnuNovo.Size = new System.Drawing.Size(158, 22);
+            this.mnuNovo.Text = "Novo";
+            // 
+            // mnuBorra
+            // 
+            this.mnuBorra.Name = "mnuBorra";
+            this.mnuBorra.Size = new System.Drawing.Size(158, 22);
+            this.mnuBorra.Text = "Borrar Selecion";
+            // 
+            // mnuModifica
+            // 
+            this.mnuModifica.Name = "mnuModifica";
+            this.mnuModifica.Size = new System.Drawing.Size(158, 22);
+            this.mnuModifica.Text = "Modificar Datos";
+            // 
+            // beneficiarioToolStripMenuItem
+            // 
+            this.beneficiarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuNovoBen,
+            this.mnuBorrarBen});
+            this.beneficiarioToolStripMenuItem.Name = "beneficiarioToolStripMenuItem";
+            this.beneficiarioToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.beneficiarioToolStripMenuItem.Text = "Beneficiario";
+            // 
+            // mnuNovoBen
+            // 
+            this.mnuNovoBen.Name = "mnuNovoBen";
+            this.mnuNovoBen.Size = new System.Drawing.Size(173, 22);
+            this.mnuNovoBen.Text = "Novo";
+            // 
+            // mnuBorrarBen
+            // 
+            this.mnuBorrarBen.Name = "mnuBorrarBen";
+            this.mnuBorrarBen.Size = new System.Drawing.Size(173, 22);
+            this.mnuBorrarBen.Text = "Borrar Selecionado";
+            // 
+            // mnuSalir
+            // 
+            this.mnuSalir.Name = "mnuSalir";
+            this.mnuSalir.Size = new System.Drawing.Size(41, 20);
+            this.mnuSalir.Text = "Salir";
+            // 
             // FrmSocieadad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,12 +276,16 @@
             this.Controls.Add(this.lblNsoc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmSocieadad";
             this.Text = "Gestion de sociedad";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +308,15 @@
         private System.Windows.Forms.Label lblNif;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblNsocio;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem sociosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuNovo;
+        private System.Windows.Forms.ToolStripMenuItem mnuBorra;
+        private System.Windows.Forms.ToolStripMenuItem mnuModifica;
+        private System.Windows.Forms.ToolStripMenuItem beneficiarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuNovoBen;
+        private System.Windows.Forms.ToolStripMenuItem mnuBorrarBen;
+        private System.Windows.Forms.ToolStripMenuItem mnuSalir;
     }
 }
 
