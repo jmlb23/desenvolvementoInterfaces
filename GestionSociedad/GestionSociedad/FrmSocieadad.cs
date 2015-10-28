@@ -22,6 +22,7 @@ namespace GestionSociedad
         DataSet dtsSociedad = new DataSet();
         bool flag = true;
         bool flag2 = true;
+        OleDbCommandBuilder cmbBuild; 
         public FrmSocieadad()
         {
             InitializeComponent();
@@ -35,6 +36,9 @@ namespace GestionSociedad
                 adaSoc = new OleDbDataAdapter("Select * from Socios order by Nombre",StructSoc.cnn);
                 //cargamos o DataSet co Fill do adaptado
                 adaSoc.Fill(dtsSociedad,"soc");
+                //crear command builder porque hai crud
+                //xa crea os inserts por nos
+                cmbBuild = new OleDbCommandBuilder(adaSoc);
                 //agregamos unha columna nova no dataset ollo que se facemos esta changa o dataset non serve para confirmar os cambios na bbdd
                 //temos que dar tres parametro nome /ti`po /calculo para obter o valor
                 //if(flag){
@@ -104,9 +108,45 @@ namespace GestionSociedad
                 this.Close();
             };
 
-            mnuNovo.Click += (sender, ev) => { 
+            mnuNovo.Click += (sender, ev) => {
                 
+                FrmAux novo = new FrmAux();
+                DataRow dtr;
+                novo.Text = "Novo Socio";
+
+                //curioso como a condicion dun if pode funcionar como disparador
+                if (novo.ShowDialog() == DialogResult.OK)
+                {
+                   
+                        StructSoc.cnn.Open();
+                        dtr = dtsSociedad.Tables["soc"].NewRow();
+                        dtr["NSocio"] = obterUltimo(); //coidado cos tipos das bbdd e os controles
+                        dtr["NIF"] = novo.txtNif.Text;
+                        dtr["Nombre"] = novo.txtNombre.Text;
+                        dtr["FechaAlta"] = novo.dtpData.Value;
+                        dtr["Baja"] = novo.chkBaixa.Checked;
+                        dtr["TipoSocio"] = novo.cmbTipos.SelectedValue; //porque é o que esta na fila selecionado o selected item danos toda a fila row
+
+                        dtsSociedad.Tables["soc"].Rows.Add(dtr);
+                        adaSoc.Update(dtsSociedad, "soc");
+                        dtsSociedad.AcceptChanges();
+                        StructSoc.cnn.Close();
+                }
+                else 
+                {
+                    return;
+                }
             };
+        }
+
+        private short obterUltimo() {
+            OleDbCommand cmm = new OleDbCommand("Select max(NSocio) from Socios",StructSoc.cnn); //vamos a bbdd e non o dataset para non crear inconsistencias
+            object o;
+             
+                //StructSoc.cnn.Open();
+                o = cmm.ExecuteScalar();
+                StructSoc.cnn.Close();
+            return o == DBNull.Value ? (short)1 : (short)(short.Parse(o.ToString()) + ((short)1));
         }
     }
 }

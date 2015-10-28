@@ -40,25 +40,27 @@
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtNif = new System.Windows.Forms.TextBox();
+            this.cmbTipos = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.cmbTipos);
             this.groupBox1.Controls.Add(this.lblNumeroSocio);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnCamcelar);
-            this.groupBox1.Controls.Add(this.btnAcep);
             this.groupBox1.Controls.Add(this.chkBaixa);
             this.groupBox1.Controls.Add(this.dtpData);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtNif);
             this.groupBox1.Location = new System.Drawing.Point(29, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(754, 391);
+            this.groupBox1.Size = new System.Drawing.Size(754, 301);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Valores do Novo Socio";
@@ -111,7 +113,7 @@
             // 
             // btnCamcelar
             // 
-            this.btnCamcelar.Location = new System.Drawing.Point(379, 337);
+            this.btnCamcelar.Location = new System.Drawing.Point(523, 376);
             this.btnCamcelar.Name = "btnCamcelar";
             this.btnCamcelar.Size = new System.Drawing.Size(75, 23);
             this.btnCamcelar.TabIndex = 6;
@@ -120,7 +122,7 @@
             // 
             // btnAcep
             // 
-            this.btnAcep.Location = new System.Drawing.Point(88, 337);
+            this.btnAcep.Location = new System.Drawing.Point(151, 376);
             this.btnAcep.Name = "btnAcep";
             this.btnAcep.Size = new System.Drawing.Size(75, 23);
             this.btnAcep.TabIndex = 5;
@@ -162,12 +164,35 @@
             this.txtNif.Size = new System.Drawing.Size(151, 20);
             this.txtNif.TabIndex = 1;
             // 
+            // cmbTipos
+            // 
+            this.cmbTipos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipos.FormattingEnabled = true;
+            this.cmbTipos.Location = new System.Drawing.Point(88, 222);
+            this.cmbTipos.Name = "cmbTipos";
+            this.cmbTipos.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipos.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(47, 225);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Tipo";
+            // 
             // FrmAux
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 454);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnAcep);
+            this.Controls.Add(this.btnCamcelar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FrmAux";
             this.Text = "FrmAux";
             this.groupBox1.ResumeLayout(false);
@@ -178,17 +203,19 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblNumeroSocio;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCamcelar;
-        private System.Windows.Forms.Button btnAcep;
-        private System.Windows.Forms.CheckBox chkBaixa;
-        private System.Windows.Forms.DateTimePicker dtpData;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtNif;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label lblNumeroSocio;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnCamcelar;
+        public System.Windows.Forms.Button btnAcep;
+        public System.Windows.Forms.CheckBox chkBaixa;
+        public System.Windows.Forms.DateTimePicker dtpData;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtNif;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox cmbTipos;
     }
 }
