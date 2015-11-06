@@ -18,12 +18,13 @@ namespace GestionSociedad
         {
             InitializeComponent();
             this.Load += (sender, even) => {
-                adaCuotas = new OleDbDataAdapter("select * from cuotas where AplicableA = 'S'",StructSoc.cnn); 
-                adaCuotas.Fill(dtsAux, "CuotasSocios"); //enchemas o dataSet coa taboa que quremos
-                cmbTipos.DataSource = dtsAux.Tables["CuotasSocios"]; //orixe
+                
+                adaCuotas = new OleDbDataAdapter("select * from Cuotas where AplicableA like 'S'",StructSoc.cnn); 
+                adaCuotas.Fill(dtsAux, "Cuotas"); //enchemas o dataSet coa taboa que quremos
+                cmbTipos.DataSource = dtsAux.Tables["Cuotas"]; //orixe
                 cmbTipos.DisplayMember = "Descripcion"; //o que amosa
                 cmbTipos.ValueMember = "TipoSocio"; //o que garda a maiores ligado o displayMember
-
+                
             };
 
 
@@ -33,6 +34,7 @@ namespace GestionSociedad
                 //despois preguntamos no principal polo resultado
                 //se da en cerrar tamen é como cancelar
                 this.DialogResult = DialogResult.Cancel;
+                this.Close();
             };
 
             //acepta e sal co valor

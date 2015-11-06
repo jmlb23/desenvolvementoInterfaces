@@ -20,9 +20,9 @@ namespace GestionSociedad
         //xa creamos o dataset porque en principio esta valeiro
         //o dataset garda tamen relacions
         DataSet dtsSociedad = new DataSet();
-        bool flag = true;
         bool flag2 = true;
-        OleDbCommandBuilder cmbBuild; 
+        OleDbCommandBuilder cmbBuild;
+        OleDbCommandBuilder cmbBuildBenef;
         public FrmSocieadad()
         {
             InitializeComponent();
@@ -75,6 +75,11 @@ namespace GestionSociedad
                 if (flag2 == true) { 
                     lblNsocio.DataBindings.Add("Text", dtsSociedad.Tables["soc"], "NSocio");
                     lblNif.DataBindings.Add("Text", dtsSociedad.Tables["soc"], "Nif");
+                    lblNombre.DataBindings.Add("Text", dtsSociedad.Tables["soc"], "Nombre");
+                    dtdata.DataBindings.Add("Value", dtsSociedad.Tables["soc"], "FechaAlta");
+                    chkBaixa.DataBindings.Add("Checked", dtsSociedad.Tables["soc"], "Baja");
+                    cmbTipo2.DataBindings.Add("Text", dtsSociedad.Tables["soc"], "TipoSocio");
+                    
                     flag2 = false;
                 }
                 //ollo que borrar as taboas como fixen antes funciona porque teño o valor do combo e traballo contra el
@@ -120,7 +125,7 @@ namespace GestionSociedad
                    
                         StructSoc.cnn.Open();
                         dtr = dtsSociedad.Tables["soc"].NewRow();
-                        dtr["NSocio"] = obterUltimo(); //coidado cos tipos das bbdd e os controles
+                        dtr["NSocio"] = obterUltimo("NSocio","Socios"); //coidado cos tipos das bbdd e os controles
                         dtr["NIF"] = novo.txtNif.Text;
                         dtr["Nombre"] = novo.txtNombre.Text;
                         dtr["FechaAlta"] = novo.dtpData.Value;
@@ -137,16 +142,84 @@ namespace GestionSociedad
                     return;
                 }
             };
+
+            mnuModifica.Click += (sender, even) => {
+                FrmAux aux = new FrmAux();
+                aux.Name = "Modifica Usuario";
+                aux.lblNumeroSocio.Visible = true;
+                aux.label4.Visible = true;
+
+                //lblNsocio.DataBindings.Add("Text", dtsSociedad.Tables["soc"], "NSocio");
+                aux.lblNumeroSocio.Text = lblNsocio.Text;
+                aux.txtNif.Text = lblNif.Text;
+                aux.txtNombre.Text = lblNombre.Text;
+                aux.dtpData.Value = dtdata.Value;
+                aux.chkBaixa.Checked = chkBaixa.Checked;
+                List<object> o = new List<object>();
+                foreach (var v in cmbTipo2.Items) {
+                    o.Add(v);
+                }
+                aux.cmbTipos.Items.AddRange(o.ToArray());
+
+                if (aux.ShowDialog() == DialogResult.OK)
+                {
+                    DataRow[] drw = dtsSociedad.Tables["Soc"].Select(string.Format("NSocio= {0}",aux.lblNumeroSocio.Text));
+
+
+                    drw[0]["FechaAlta"] = aux.dtpData.Value;
+                    drw[0]["Baja"] = aux.chkBaixa.Checked;
+                    drw[0]["TipoSocio"] = aux.cmbTipos.Text[0];
+                    adaSoc.Update(dtsSociedad, "soc");
+                    dtsSociedad.AcceptChanges();
+                }
+                else
+                {
+                    return;
+                }
+                StructSoc.cnn.Close();
+            };
+
+            mnuNovoBen.Click += (sender, even) => {
+                FrmAux aux = new FrmAux();
+                aux.Name = "Novo Beneficiario";
+                DataRow dtr;
+                //temos que ter o builder para facer crud
+                cmbBuildBenef = new OleDbCommandBuilder(adaBen);
+                if (aux.ShowDialog() == DialogResult.OK)
+                {
+
+                    StructSoc.cnn.Open();
+                    dtr = dtsSociedad.Tables["Benef"].NewRow();
+                    dtr["NSocio"] = short.Parse(lblNsocio.Text); //coidado cos tipos das bbdd e os controles
+                    dtr["NBenef"] = obterUltimo("NBenef","Beneficiarios");
+                    dtr["NIF"] = aux.txtNif.Text;
+                    dtr["Nombre"] = aux.txtNombre.Text;
+                    dtr["FechaAlta"] = aux.dtpData.Value;
+                    dtr["Baja"] = aux.chkBaixa.Checked;
+                    dtr["TipoSocio"] = aux.cmbTipos.SelectedValue; //porque é o que esta na fila selecionado o selected item danos toda a fila row
+
+                    dtsSociedad.Tables["Benef"].Rows.Add(dtr);
+                    adaBen.Update(dtsSociedad, "Benef");
+                    dtsSociedad.AcceptChanges();
+                    StructSoc.cnn.Close();
+                }
+                else
+                {
+                    return;
+                }
+            };
         }
 
-        private short obterUltimo() {
-            OleDbCommand cmm = new OleDbCommand("Select max(NSocio) from Socios",StructSoc.cnn); //vamos a bbdd e non o dataset para non crear inconsistencias
+        private short obterUltimo(string campo,string taboa) {
+            OleDbCommand cmm = new OleDbCommand(string.Format("Select max({0}) from {1}",campo,taboa),StructSoc.cnn); //vamos a bbdd e non o dataset para non crear inconsistencias
             object o;
-             
+            System.Console.WriteLine(cmm.ExecuteScalar());            
                 //StructSoc.cnn.Open();
                 o = cmm.ExecuteScalar();
                 StructSoc.cnn.Close();
             return o == DBNull.Value ? (short)1 : (short)(short.Parse(o.ToString()) + ((short)1));
         }
+
+        
     }
 }

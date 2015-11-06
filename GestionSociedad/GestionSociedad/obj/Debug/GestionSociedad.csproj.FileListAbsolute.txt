@@ -8,3 +8,15 @@ F:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.exe
 F:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.pdb
 F:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.csprojResolveAssemblyReference.cache
 F:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.FrmAux.resources
+F:\proyectos\GestionSociedad\GestionSociedad\bin\Debug\data\Sociedad.accdb
+E:\proyectos\GestionSociedad\GestionSociedad\bin\Debug\GestionSociedad.exe.config
+E:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.exe
+E:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.pdb
+E:\proyectos\GestionSociedad\GestionSociedad\bin\Debug\data\Sociedad.accdb
+E:\proyectos\GestionSociedad\GestionSociedad\bin\Debug\GestionSociedad.exe
+E:\proyectos\GestionSociedad\GestionSociedad\bin\Debug\GestionSociedad.pdb
+E:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.csprojResolveAssemblyReference.cache
+E:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.FrmAux.resources
+E:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.FrmSocieadad.resources
+E:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.Properties.Resources.resources
+E:\proyectos\GestionSociedad\GestionSociedad\obj\Debug\GestionSociedad.csproj.GenerateResource.Cache
