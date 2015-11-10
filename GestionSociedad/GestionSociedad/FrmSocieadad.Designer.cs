@@ -39,6 +39,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbTipo2 = new System.Windows.Forms.ComboBox();
+            this.chkBaixa = new System.Windows.Forms.CheckBox();
+            this.dtdata = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblNif = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,18 +60,9 @@
             this.mnuNovoBen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBorrarBen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dtdata = new System.Windows.Forms.DateTimePicker();
-            this.chkBaixa = new System.Windows.Forms.CheckBox();
-            this.cmbTipo2 = new System.Windows.Forms.ComboBox();
+            this.mnuCuota = new System.Windows.Forms.ToolStripMenuItem();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCuouta = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -164,6 +163,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblCuouta);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cmbTipo2);
             this.groupBox2.Controls.Add(this.chkBaixa);
             this.groupBox2.Controls.Add(this.dtdata);
@@ -182,6 +183,77 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Socio";
+            // 
+            // cmbTipo2
+            // 
+            this.cmbTipo2.Enabled = false;
+            this.cmbTipo2.FormattingEnabled = true;
+            this.cmbTipo2.Location = new System.Drawing.Point(101, 173);
+            this.cmbTipo2.Name = "cmbTipo2";
+            this.cmbTipo2.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo2.TabIndex = 14;
+            // 
+            // chkBaixa
+            // 
+            this.chkBaixa.AutoSize = true;
+            this.chkBaixa.Enabled = false;
+            this.chkBaixa.Location = new System.Drawing.Point(100, 146);
+            this.chkBaixa.Name = "chkBaixa";
+            this.chkBaixa.Size = new System.Drawing.Size(15, 14);
+            this.chkBaixa.TabIndex = 13;
+            this.chkBaixa.UseVisualStyleBackColor = true;
+            // 
+            // dtdata
+            // 
+            this.dtdata.Enabled = false;
+            this.dtdata.Location = new System.Drawing.Point(93, 108);
+            this.dtdata.Name = "dtdata";
+            this.dtdata.Size = new System.Drawing.Size(200, 20);
+            this.dtdata.TabIndex = 12;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(32, 173);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 13);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "TIpo Socio:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(32, 142);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(28, 13);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Baja";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "FechaAlta";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(32, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Nombre";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(165, 77);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(0, 13);
+            this.lblNombre.TabIndex = 4;
             // 
             // label5
             // 
@@ -234,7 +306,8 @@
             this.sociosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNovo,
             this.mnuBorra,
-            this.mnuModifica});
+            this.mnuModifica,
+            this.mnuCuota});
             this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
             this.sociosToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.sociosToolStripMenuItem.Text = "Socios";
@@ -284,122 +357,34 @@
             this.mnuSalir.Size = new System.Drawing.Size(41, 20);
             this.mnuSalir.Text = "Salir";
             // 
-            // button1
+            // mnuCuota
             // 
-            this.button1.Location = new System.Drawing.Point(323, 638);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.mnuCuota.Name = "mnuCuota";
+            this.mnuCuota.Size = new System.Drawing.Size(158, 22);
+            this.mnuCuota.Text = "Calcular Couta";
             // 
-            // button2
+            // label8
             // 
-            this.button2.Location = new System.Drawing.Point(92, 638);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(360, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Cuota:";
             // 
-            // button3
+            // lblCuouta
             // 
-            this.button3.Location = new System.Drawing.Point(596, 638);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(802, 638);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "FechaAlta";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 77);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Nombre";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(165, 77);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(0, 13);
-            this.lblNombre.TabIndex = 4;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(284, 47);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(62, 13);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "TIpo Socio:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(284, 16);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(28, 13);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Baja";
-            // 
-            // dtdata
-            // 
-            this.dtdata.Enabled = false;
-            this.dtdata.Location = new System.Drawing.Point(93, 108);
-            this.dtdata.Name = "dtdata";
-            this.dtdata.Size = new System.Drawing.Size(200, 20);
-            this.dtdata.TabIndex = 12;
-            // 
-            // chkBaixa
-            // 
-            this.chkBaixa.AutoSize = true;
-            this.chkBaixa.Enabled = false;
-            this.chkBaixa.Location = new System.Drawing.Point(352, 20);
-            this.chkBaixa.Name = "chkBaixa";
-            this.chkBaixa.Size = new System.Drawing.Size(15, 14);
-            this.chkBaixa.TabIndex = 13;
-            this.chkBaixa.UseVisualStyleBackColor = true;
-            // 
-            // cmbTipo2
-            // 
-            this.cmbTipo2.Enabled = false;
-            this.cmbTipo2.FormattingEnabled = true;
-            this.cmbTipo2.Location = new System.Drawing.Point(353, 47);
-            this.cmbTipo2.Name = "cmbTipo2";
-            this.cmbTipo2.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipo2.TabIndex = 14;
+            this.lblCuouta.AutoSize = true;
+            this.lblCuouta.Location = new System.Drawing.Point(419, 15);
+            this.lblCuouta.Name = "lblCuouta";
+            this.lblCuouta.Size = new System.Drawing.Size(0, 13);
+            this.lblCuouta.TabIndex = 16;
             // 
             // FrmSocieadad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 694);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVer);
@@ -448,10 +433,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuNovoBen;
         private System.Windows.Forms.ToolStripMenuItem mnuBorrarBen;
         private System.Windows.Forms.ToolStripMenuItem mnuSalir;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cmbTipo2;
         private System.Windows.Forms.CheckBox chkBaixa;
         private System.Windows.Forms.DateTimePicker dtdata;
@@ -460,6 +441,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.ToolStripMenuItem mnuCuota;
+        private System.Windows.Forms.Label lblCuouta;
+        private System.Windows.Forms.Label label8;
     }
 }
 

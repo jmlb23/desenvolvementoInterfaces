@@ -11,9 +11,9 @@ namespace MvcApplication1.Controllers
         //
         // GET: /Controlador/
 
-        public ActionResult Index()
+        public String Index()
         {
-            return View();
+            return "hola mundo";
         }
 
     }

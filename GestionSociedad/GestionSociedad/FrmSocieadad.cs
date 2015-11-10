@@ -26,7 +26,7 @@ namespace GestionSociedad
         public FrmSocieadad()
         {
             InitializeComponent();
-            
+
             this.Load += (sender, e) =>
             {
                 //creamos o adaptador para socios e cargar no combo os socios ordenado por apelidos
@@ -67,6 +67,7 @@ namespace GestionSociedad
             //cando cambia a selecion do combo
             cmbSocio.SelectionChangeCommitted += (sender, e) =>
             {
+                lblCuouta.Text = "";
                 //borrar do data set cada vez que entramos xa que o fill non é destructivo conserva os datos no dunha consulta a outra
                 //temos que facelo sobre o dataset non sobre o control
                 //non ten sentido borrar a colecion tables do dataset completa porque so queremos que borre a taboa concreta
@@ -118,7 +119,8 @@ namespace GestionSociedad
                 FrmAux novo = new FrmAux();
                 DataRow dtr;
                 novo.Text = "Novo Socio";
-
+                novo.cmbBenef.Visible = false;
+                novo.cmbTipos.Visible = true;
                 //curioso como a condicion dun if pode funcionar como disparador
                 if (novo.ShowDialog() == DialogResult.OK)
                 {
@@ -144,6 +146,7 @@ namespace GestionSociedad
             };
 
             mnuModifica.Click += (sender, even) => {
+                if (valida()) return;
                 FrmAux aux = new FrmAux();
                 aux.Name = "Modifica Usuario";
                 aux.lblNumeroSocio.Visible = true;
@@ -180,10 +183,14 @@ namespace GestionSociedad
             };
 
             mnuNovoBen.Click += (sender, even) => {
+                if (valida()) return;
                 FrmAux aux = new FrmAux();
                 aux.Name = "Novo Beneficiario";
                 DataRow dtr;
                 //temos que ter o builder para facer crud
+                aux.cmbBenef.Visible = true;
+                aux.cmbTipos.Visible = false;
+                aux.cmbBenef.DataBindings.Add("Text", dtsSociedad.Tables["Benef"],"TipoSocio");
                 cmbBuildBenef = new OleDbCommandBuilder(adaBen);
                 if (aux.ShowDialog() == DialogResult.OK)
                 {
@@ -208,18 +215,36 @@ namespace GestionSociedad
                     return;
                 }
             };
+
+            mnuCuota.Click += (sender, even) => {
+                if (valida()) return;
+                OleDbCommand cmm = new OleDbCommand(string.Format("SELECT SUM(Cuotas.Cuota) AS Expr1 FROM((Socios INNER JOIN Beneficiarios ON Socios.NSocio = Beneficiarios.NSocio) INNER JOIN Cuotas ON Cuotas.TipoSocio = Beneficiarios.TipoSocio) WHERE(Beneficiarios.Baja = false and Beneficiarios.NSocio = {0}) GROUP BY Beneficiarios.NSocio",lblNsocio.Text), StructSoc.cnn); //vamos a bbdd e non o dataset para non crear inconsistencias
+                
+                StructSoc.cnn.Open();
+                cmm.ExecuteScalar();
+                lblCuouta.Text = cmm.ExecuteScalar().ToString();
+
+                lblCuouta.Text = (int.Parse(lblCuouta.Text) + 25).ToString();//porque falta o titular que sempre é 25
+                StructSoc.cnn.Close();
+            };
         }
 
         private short obterUltimo(string campo,string taboa) {
             OleDbCommand cmm = new OleDbCommand(string.Format("Select max({0}) from {1}",campo,taboa),StructSoc.cnn); //vamos a bbdd e non o dataset para non crear inconsistencias
-            object o;
-            System.Console.WriteLine(cmm.ExecuteScalar());            
+            object o;          
                 //StructSoc.cnn.Open();
                 o = cmm.ExecuteScalar();
                 StructSoc.cnn.Close();
             return o == DBNull.Value ? (short)1 : (short)(short.Parse(o.ToString()) + ((short)1));
         }
 
-        
+        private bool valida() {
+            
+            if (cmbSocio.Text == "") {
+                MessageBox.Show("Faltan datos", "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+            return false;
+        }        
     }
 }
