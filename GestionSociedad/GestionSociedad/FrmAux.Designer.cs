@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbBenef = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbTipos = new System.Windows.Forms.ComboBox();
             this.lblNumeroSocio = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.txtNif = new System.Windows.Forms.TextBox();
             this.btnCamcelar = new System.Windows.Forms.Button();
             this.btnAcep = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbBenef = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Valores do Novo Socio";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(47, 225);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Tipo";
+            // 
+            // cmbBenef
+            // 
+            this.cmbBenef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBenef.FormattingEnabled = true;
+            this.cmbBenef.Location = new System.Drawing.Point(88, 222);
+            this.cmbBenef.Name = "cmbBenef";
+            this.cmbBenef.Size = new System.Drawing.Size(121, 21);
+            this.cmbBenef.TabIndex = 13;
             // 
             // label5
             // 
@@ -185,24 +203,6 @@
             this.btnAcep.TabIndex = 5;
             this.btnAcep.Text = "Aceptar";
             this.btnAcep.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 225);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Tipo";
-            // 
-            // cmbBenef
-            // 
-            this.cmbBenef.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBenef.FormattingEnabled = true;
-            this.cmbBenef.Location = new System.Drawing.Point(88, 222);
-            this.cmbBenef.Name = "cmbBenef";
-            this.cmbBenef.Size = new System.Drawing.Size(121, 21);
-            this.cmbBenef.TabIndex = 13;
             // 
             // FrmAux
             // 

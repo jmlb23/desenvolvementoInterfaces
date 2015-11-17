@@ -17,12 +17,14 @@ namespace GestionSociedad
         //dous adaptadores un para cada taboa sen inicializalos xa que ten que caragar o select
         OleDbDataAdapter adaSoc;
         OleDbDataAdapter adaBen;
+        OleDbDataAdapter adaCuo;
         //xa creamos o dataset porque en principio esta valeiro
         //o dataset garda tamen relacions
         DataSet dtsSociedad = new DataSet();
         bool flag2 = true;
         OleDbCommandBuilder cmbBuild;
         OleDbCommandBuilder cmbBuildBenef;
+        
         public FrmSocieadad()
         {
             InitializeComponent();
@@ -34,8 +36,10 @@ namespace GestionSociedad
                 //o adaptador carga a taboa e despois pilla o que queiramos se poñemos o select *
                 //ollo se non precisamos todos os campos dunha taboa
                 adaSoc = new OleDbDataAdapter("Select * from Socios order by Nombre",StructSoc.cnn);
+                adaCuo = new OleDbDataAdapter("Select * from Cuotas", StructSoc.cnn);
                 //cargamos o DataSet co Fill do adaptado
                 adaSoc.Fill(dtsSociedad,"soc");
+                adaCuo.Fill(dtsSociedad,"cuo");
                 //crear command builder porque hai crud
                 //xa crea os inserts por nos
                 cmbBuild = new OleDbCommandBuilder(adaSoc);
@@ -206,6 +210,7 @@ namespace GestionSociedad
                     dtr["TipoSocio"] = aux.cmbTipos.SelectedValue; //porque é o que esta na fila selecionado o selected item danos toda a fila row
 
                     dtsSociedad.Tables["Benef"].Rows.Add(dtr);
+                    
                     adaBen.Update(dtsSociedad, "Benef");
                     dtsSociedad.AcceptChanges();
                     StructSoc.cnn.Close();
@@ -221,11 +226,52 @@ namespace GestionSociedad
                 OleDbCommand cmm = new OleDbCommand(string.Format("SELECT SUM(Cuotas.Cuota) AS Expr1 FROM((Socios INNER JOIN Beneficiarios ON Socios.NSocio = Beneficiarios.NSocio) INNER JOIN Cuotas ON Cuotas.TipoSocio = Beneficiarios.TipoSocio) WHERE(Beneficiarios.Baja = false and Beneficiarios.NSocio = {0}) GROUP BY Beneficiarios.NSocio",lblNsocio.Text), StructSoc.cnn); //vamos a bbdd e non o dataset para non crear inconsistencias
                 
                 StructSoc.cnn.Open();
-                cmm.ExecuteScalar();
-                lblCuouta.Text = cmm.ExecuteScalar().ToString();
+                //cmm.ExecuteScalar();
+                //workarround para que se non ten ningun beneficiario non faga un toString sobre un punteiro nuloa
+                lblCuouta.Text = cmm.ExecuteScalar()==null? (0).ToString() : cmm.ExecuteScalar().ToString();
 
-                lblCuouta.Text = (int.Parse(lblCuouta.Text) + 25).ToString();//porque falta o titular que sempre é 25
+                lblCuouta.Text = (int.Parse(lblCuouta.Text) + (cmbTipo2.Text.Equals("T")? 25 : 15)).ToString();//porque falta o titular que sempre é 25
                 StructSoc.cnn.Close();
+                
+            };
+
+
+            //miralo
+            mnuBorrarBen.Click += (sen, eve) => {
+                if (lstBeneficiarios.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Non hai beneficario", "non hai beneficiario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else 
+                {
+                    cmbBuildBenef = new OleDbCommandBuilder(adaBen);
+                    DataRowView fila = (DataRowView)lstBeneficiarios.SelectedItem;
+                    fila.BeginEdit();
+                        fila["Baja"] = true;
+                    fila.EndEdit();
+                    //Facemos o update no adaptador e despois facemos o accepchanges
+                   
+                    adaBen.Update(dtsSociedad, "Benef");
+                    dtsSociedad.AcceptChanges();
+                    MessageBox.Show("Exito","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+            };
+            mnuElimina.Click += (sender, even) => {
+                if (lstBeneficiarios.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Non hai beneficario", "non hai beneficiario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    cmbBuildBenef = new OleDbCommandBuilder(adaBen);
+                    DataRowView fila = (DataRowView)lstBeneficiarios.SelectedItem;
+                    fila.Delete();
+                    adaBen.Update(dtsSociedad, "Benef");
+                    dtsSociedad.AcceptChanges();
+                    MessageBox.Show("Exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             };
         }
 
@@ -245,6 +291,21 @@ namespace GestionSociedad
                 return true;
             }
             return false;
-        }        
+        }
+
+        private short cuota(string tipo) {
+
+            dtsSociedad.Tables["cuo"].DefaultView.Sort = "TipoSocio";
+            int pos = 0;
+            //pillamos a posicion do tipo na taboa
+            pos = dtsSociedad.Tables["cuo"].DefaultView.Find(tipo);
+            DataRow fila = null;
+            //acedemos a ese valor e gardamolo no datarow
+            fila = dtsSociedad.Tables["cuo"].Rows[pos];
+
+            return short.Parse(fila["Cuota"].ToString());
+        }
     }
+
+
 }
