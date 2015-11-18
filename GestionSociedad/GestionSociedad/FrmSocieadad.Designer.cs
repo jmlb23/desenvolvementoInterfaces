@@ -66,14 +66,14 @@
             this.mnuElimina = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.TSnuevosocio = new System.Windows.Forms.ToolStripButton();
+            this.TSElimina = new System.Windows.Forms.ToolStripButton();
+            this.TSEdita = new System.Windows.Forms.ToolStripButton();
+            this.TSCalcula = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.TSnovoBenef = new System.Windows.Forms.ToolStripButton();
+            this.TSEliminaBenef = new System.Windows.Forms.ToolStripButton();
+            this.TSsalir = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -402,87 +402,87 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
+            this.TSnuevosocio,
+            this.TSElimina,
+            this.TSEdita,
+            this.TSCalcula,
             this.toolStripSeparator1,
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.toolStripButton7});
+            this.TSnovoBenef,
+            this.TSEliminaBenef,
+            this.TSsalir});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(958, 25);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // TSnuevosocio
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Novo socio";
+            this.TSnuevosocio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSnuevosocio.Image = ((System.Drawing.Image)(resources.GetObject("TSnuevosocio.Image")));
+            this.TSnuevosocio.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSnuevosocio.Name = "TSnuevosocio";
+            this.TSnuevosocio.Size = new System.Drawing.Size(23, 22);
+            this.TSnuevosocio.Text = "Novo socio";
             // 
-            // toolStripButton2
+            // TSElimina
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Borrar socio";
+            this.TSElimina.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSElimina.Image = ((System.Drawing.Image)(resources.GetObject("TSElimina.Image")));
+            this.TSElimina.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSElimina.Name = "TSElimina";
+            this.TSElimina.Size = new System.Drawing.Size(23, 22);
+            this.TSElimina.Text = "Borrar socio";
             // 
-            // toolStripButton3
+            // TSEdita
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "Editar socio";
+            this.TSEdita.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSEdita.Image = ((System.Drawing.Image)(resources.GetObject("TSEdita.Image")));
+            this.TSEdita.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSEdita.Name = "TSEdita";
+            this.TSEdita.Size = new System.Drawing.Size(23, 22);
+            this.TSEdita.Text = "Editar socio";
             // 
-            // toolStripButton4
+            // TSCalcula
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "Calcular Cuota";
+            this.TSCalcula.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSCalcula.Image = ((System.Drawing.Image)(resources.GetObject("TSCalcula.Image")));
+            this.TSCalcula.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSCalcula.Name = "TSCalcula";
+            this.TSCalcula.Size = new System.Drawing.Size(23, 22);
+            this.TSCalcula.Text = "Calcular Cuota";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton5
+            // TSnovoBenef
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "Novo beneficiario";
+            this.TSnovoBenef.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSnovoBenef.Image = ((System.Drawing.Image)(resources.GetObject("TSnovoBenef.Image")));
+            this.TSnovoBenef.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSnovoBenef.Name = "TSnovoBenef";
+            this.TSnovoBenef.Size = new System.Drawing.Size(23, 22);
+            this.TSnovoBenef.Text = "Novo beneficiario";
             // 
-            // toolStripButton6
+            // TSEliminaBenef
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton6.Text = "Eliminar beneficiario";
+            this.TSEliminaBenef.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSEliminaBenef.Image = ((System.Drawing.Image)(resources.GetObject("TSEliminaBenef.Image")));
+            this.TSEliminaBenef.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSEliminaBenef.Name = "TSEliminaBenef";
+            this.TSEliminaBenef.Size = new System.Drawing.Size(23, 22);
+            this.TSEliminaBenef.Text = "Eliminar beneficiario";
             // 
-            // toolStripButton7
+            // TSsalir
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton7.Text = "Sair";
+            this.TSsalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.TSsalir.Image = ((System.Drawing.Image)(resources.GetObject("TSsalir.Image")));
+            this.TSsalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TSsalir.Name = "TSsalir";
+            this.TSsalir.Size = new System.Drawing.Size(23, 22);
+            this.TSsalir.Text = "Sair";
             // 
             // FrmSocieadad
             // 
@@ -553,14 +553,14 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolStripMenuItem mnuElimina;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton TSnuevosocio;
+        private System.Windows.Forms.ToolStripButton TSElimina;
+        private System.Windows.Forms.ToolStripButton TSEdita;
+        private System.Windows.Forms.ToolStripButton TSCalcula;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton TSnovoBenef;
+        private System.Windows.Forms.ToolStripButton TSEliminaBenef;
+        private System.Windows.Forms.ToolStripButton TSsalir;
     }
 }
 
