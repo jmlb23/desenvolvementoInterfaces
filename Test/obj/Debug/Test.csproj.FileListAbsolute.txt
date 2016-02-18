@@ -1,0 +1,13 @@
+F:\proxectos\post\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+F:\proxectos\post\Test\bin\Debug\Test.exe.config
+F:\proxectos\post\Test\bin\Debug\Test.exe
+F:\proxectos\post\Test\bin\Debug\Test.pdb
+F:\proxectos\post\Test\bin\Debug\MongoDB.Bson.dll
+F:\proxectos\post\Test\bin\Debug\MongoDB.Driver.Core.dll
+F:\proxectos\post\Test\bin\Debug\MongoDB.Driver.dll
+F:\proxectos\post\Test\bin\Debug\ClassLibrary1.pdb
+F:\proxectos\post\Test\bin\Debug\MongoDB.Bson.xml
+F:\proxectos\post\Test\bin\Debug\MongoDB.Driver.xml
+F:\proxectos\post\Test\obj\Debug\Test.exe
+F:\proxectos\post\Test\obj\Debug\Test.pdb
+F:\proxectos\post\Test\bin\Debug\ClassLibrary1.dll

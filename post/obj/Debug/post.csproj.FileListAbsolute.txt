@@ -1,0 +1,12 @@
+c:\users\jesus\documents\visual studio 2015\Projects\post\post\bin\Debug\post.exe.config
+c:\users\jesus\documents\visual studio 2015\Projects\post\post\bin\Debug\post.exe
+c:\users\jesus\documents\visual studio 2015\Projects\post\post\bin\Debug\post.pdb
+c:\users\jesus\documents\visual studio 2015\Projects\post\post\obj\Debug\post.csprojResolveAssemblyReference.cache
+c:\users\jesus\documents\visual studio 2015\Projects\post\post\obj\Debug\post.exe
+c:\users\jesus\documents\visual studio 2015\Projects\post\post\obj\Debug\post.pdb
+c:\users\jesus\documents\visual studio 2015\Projects\post\post\bin\Debug\Npgsql.dll
+c:\users\jesus\documents\visual studio 2015\Projects\post\post\bin\Debug\Npgsql.xml
+H:\proxectos\post\post\bin\Debug\post.exe.config
+H:\proxectos\post\post\obj\Debug\post.exe
+H:\proxectos\post\post\obj\Debug\post.pdb
+H:\proxectos\post\post\obj\Debug\post.csprojResolveAssemblyReference.cache
