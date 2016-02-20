@@ -13,12 +13,20 @@ namespace post.Modelo.entidades
     {
         private decimal _idSiniestro;
         private decimal _numeroBastidor;
-        private Date _dataSinistro;
+        private DateTime _dataSinistro;
         private string _descripcionSuceso;
 
+
+        public Siniestro(decimal idSiniestro, decimal numeroBastidor, DateTime dataSinistro, string descripcionSuceso)
+        {
+            _idSiniestro = idSiniestro;
+            _numeroBastidor = numeroBastidor;
+            _dataSinistro = dataSinistro;
+            _descripcionSuceso = descripcionSuceso;
+        }
         public decimal IdSiniestro{ get; set; }
         public decimal NumeroBastidor{ get; set; }
-        public Date DataSinistro { get; set; }
+        public DateTime DataSinistro { get; set; }
         public string DescripcionSuceso{ get; set; }
 
         public override string ToString()

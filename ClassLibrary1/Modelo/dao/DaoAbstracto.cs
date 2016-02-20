@@ -8,9 +8,9 @@ namespace post.Modelo.dao
         protected C conexion;
         public abstract void create(E entidade);
         public abstract List<E> read();
-        public abstract E readOne( string campo,uint valor);
-        public abstract void update(E resgistro, string campo, uint valor);
-        public abstract void remove( E resgistro, string campo, uint valor);
+        public abstract E readOne(string campo,T valor);
+        public abstract void update(E campo, T valor);
+        public abstract void remove(string campo, T valor);
 
     }
 

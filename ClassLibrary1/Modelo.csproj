@@ -62,7 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modelo\dao\DaoSqlServer.cs" />
+    <Compile Include="Modelo\dao\DaoAccess.cs" />
     <Compile Include="Modelo\entidades\companhia.cs" />
     <Compile Include="Modelo\entidades\Conductor.cs" />
     <Compile Include="Modelo\entidades\covertura.cs" />
@@ -90,6 +90,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="VistaModelo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Datos\seguros.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

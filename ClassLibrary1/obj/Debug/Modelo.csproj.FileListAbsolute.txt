@@ -5,7 +5,6 @@ H:\proxectos\post\ClassLibrary1\bin\Debug\MongoDB.Driver.Core.dll
 H:\proxectos\post\ClassLibrary1\bin\Debug\MongoDB.Driver.dll
 H:\proxectos\post\ClassLibrary1\bin\Debug\MongoDB.Bson.xml
 H:\proxectos\post\ClassLibrary1\bin\Debug\MongoDB.Driver.xml
-H:\proxectos\post\ClassLibrary1\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
 H:\proxectos\post\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 H:\proxectos\post\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 F:\proxectos\post\ClassLibrary1\bin\Debug\ClassLibrary1.dll.config
@@ -23,3 +22,13 @@ F:\proxectos\post\ClassLibrary1\bin\Debug\MongoDB.Driver.xml
 F:\proxectos\post\ClassLibrary1\bin\Debug\Newtonsoft.Json.xml
 F:\proxectos\post\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 F:\proxectos\post\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+H:\proxectos\post\ClassLibrary1\bin\Debug\ClassLibrary1.dll.config
+H:\proxectos\post\ClassLibrary1\bin\Debug\Json.dll
+H:\proxectos\post\ClassLibrary1\bin\Debug\MySql.Data.dll
+H:\proxectos\post\ClassLibrary1\bin\Debug\Newtonsoft.Json.dll
+H:\proxectos\post\ClassLibrary1\bin\Debug\Json.pdb
+H:\proxectos\post\ClassLibrary1\bin\Debug\Newtonsoft.Json.xml
+H:\proxectos\post\ClassLibrary1\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+H:\proxectos\post\ClassLibrary1\bin\Debug\Datos\seguros.accdb
+F:\proxectos\post\ClassLibrary1\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+F:\proxectos\post\ClassLibrary1\bin\Debug\Datos\seguros.accdb

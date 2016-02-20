@@ -13,7 +13,13 @@ namespace post.Modelo.entidades
         private string _apelidos;
         private bool _eConductor;
 
-        
+        public Conductor(string dni, string nome,string apelidos,bool eConductor)
+        {
+            _dni = dni;
+            _nome = nome;
+            _apelidos = apelidos;
+            _eConductor = eConductor;
+        }
         public Conductor()
         {
             

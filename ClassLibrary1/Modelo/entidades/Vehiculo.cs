@@ -7,29 +7,26 @@ using System.ComponentModel;
 
 namespace post.Modelo.entidades
 {
-    public enum Cor : byte {
-        [Description("roxo")]
-        ROXO,
-        [Description("azul")]
-        AZUL,
-        [Description("amarelo")]
-        AMARELO
-       
-    }
     class Vehiculo : IEntidade
     {
         private decimal _numero_vastidor;
         private string _modelo;
         private string _marca;
-        private Cor _cor;
+        private string _cor;
 
 
-        
+        public Vehiculo(decimal numeroVastidor, string modelo, string marca, string cor)
+        {
+            _numero_vastidor = numeroVastidor;
+            _modelo = modelo;
+            _marca = marca;
+            _cor = cor;
+        }
 
         public decimal NumeroVastidor { get; set; }
         public string Modelo { get; set; }
         public string Marca { get; set; }
-        public Cor Cor{ get; set; }
+        public string Cor{ get; set; }
 
         public override string ToString()
         {

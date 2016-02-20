@@ -14,7 +14,14 @@ namespace post.Modelo.entidades
         //xa que os floats e doubles dan problemas na precision
         private decimal _prezo;
 
-        
+        public Covertura(decimal idCovertura,decimal idPoliza, string descripcion,decimal prezo)
+        {
+            _idCovertura = idCovertura;
+            _idPoliza = idPoliza;
+            _descripcion = descripcion;
+            _prezo = prezo;
+        }
+
         public Covertura()
         {
             

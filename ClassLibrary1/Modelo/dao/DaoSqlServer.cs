@@ -20,11 +20,11 @@ namespace post.Modelo.dao
         string tableName = typeof(E).Name.ToLower();
         public DaoSqlServer() 
         {
-            
-            conexion = new SqlConnection($"Server=tcp:porbas.database.windows.net,1433;Database=seguros_2016-02-16T23-07Z;User ID=jesus@porbas;Password={"and123..one456,,"};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            string pass = "and123..one456,,";
+            conexion = new SqlConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=H:\proxectos\post\ClassLibrary1\Datos\seguros.accdb;Persist Security Info=True");
 
             conexion.Open();
-            adaptador = new SqlDataAdapter($"select * from {tableName}" , conexion);
+            adaptador = new SqlDataAdapter(string.Format("select * from {0}",tableName) , conexion);
             
             builder = new SqlCommandBuilder(adaptador);
             adaptador.Fill(tablas,tableName);

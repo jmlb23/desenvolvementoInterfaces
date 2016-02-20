@@ -12,6 +12,12 @@ namespace post.Modelo.entidades
         private string _dni;
         private decimal _numeroVastidor;
 
+        public Posue(decimal idPosue, string dni, decimal numeroVastidor)
+        {
+            _idPosue = idPosue;
+            _dni = dni;
+            _numeroVastidor = numeroVastidor;
+        }
         
         public string Dni
         {

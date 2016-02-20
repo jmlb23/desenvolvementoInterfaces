@@ -11,9 +11,17 @@ namespace post.Modelo.entidades
         private decimal _idPoliza;
         private decimal _idCompanhia;
         private decimal _numeroVastidor;
-        private Date _inicioPoliza;
-        private Date _finPoliza;
-        
+        private DateTime _inicioPoliza;
+        private DateTime _finPoliza;
+
+        public Poliza( decimal idPoliza, decimal idCompanhia,decimal numeroVastidor,DateTime inicioPoliza, DateTime finPoliza)
+        {
+            _idPoliza = idPoliza;
+            _idCompanhia = idCompanhia;
+            _numeroVastidor = numeroVastidor;
+            _inicioPoliza = inicioPoliza;
+            _finPoliza = finPoliza;
+        }
         public Poliza()
         {
             
@@ -21,8 +29,8 @@ namespace post.Modelo.entidades
         public decimal IdPoliza{ get; set; }
         public decimal IdCompanhia { get; set; }
         public decimal NumeroVastidor { get; set; }
-        public Date InicioPoliza { get; set; }
-        public Date FinPoliza { get; set; }
+        public DateTime InicioPoliza { get; set; }
+        public DateTime FinPoliza { get; set; }
 
         public override string ToString()
         {
